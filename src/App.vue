@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <Header></Header>
+        <Header @pageWasChanged="currentPage = $event"></Header>
         <CardFront />
       </div>
     </div>
@@ -14,6 +14,11 @@ import Header from "./components/Header";
 import CardFront from "./components/card/CardFront";
 
 export default {
+  data() {
+    return {
+      currentPage: "cardFront"
+    };
+  },
   components: {
     Header,
     CardFront
