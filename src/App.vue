@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-sm-12">
         <Header></Header>
+        <CardFront />
       </div>
     </div>
   </div>
@@ -10,9 +11,12 @@
 
 <script>
 import Header from "./components/Header";
+import CardFront from "./components/card/CardFront";
+
 export default {
   components: {
-    Header
+    Header,
+    CardFront
   }
 };
 </script>
