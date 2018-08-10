@@ -22,4 +22,8 @@ export default {
 </script>
 
 <style>
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #333;
+}
 </style>
