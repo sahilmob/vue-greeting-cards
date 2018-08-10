@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-12">
         <Header @pageWasChanged="currentPage = $event"></Header>
-        <CardFront />
+        <component :is="currentPage"></component>
       </div>
     </div>
   </div>
