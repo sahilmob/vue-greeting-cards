@@ -7,7 +7,6 @@
                 <progress value="0" max="100" id="progressBar"></progress>
                 <br>
                 <img id="image">
-                <button type="button" id="setImageButton" style="display:none" @click="setImage">Set Image</button>
             </div>
         </div>
     </div>
