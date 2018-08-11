@@ -1,6 +1,6 @@
 <template>
   <div class="row image-container" :style="styleObject" @mouseover="showOptions=true" @mouseleave="showOptions=false">
-    <button type="button" class="btn btn-danger btn-sm" v-show="showOptions">Remove Image</button>
+    <button type="button" class="btn btn-danger btn-sm" v-show="showOptions" @click="clearImageProp">Remove Image</button>
     <img id="outputImage">
   </div>
 </template>
@@ -21,7 +21,8 @@ export default {
     containerHeight: {
       type: Number,
       default: 200
-    }
+    },
+    clearImageProp: Function
   },
   watch: {
     displayImage() {
