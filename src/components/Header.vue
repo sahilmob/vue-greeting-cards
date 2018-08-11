@@ -15,10 +15,13 @@
                 <a href="#" class="nav-link" @click="pageSelected='cardBack'">Back</a>
             </li>
         </ul>
+        <hr>
+        <cc-card-progress></cc-card-progress>
     </div>
 </template>
 
 <script>
+import CardProgress from "./card/cardProgress";
 export default {
   data() {
     return {
@@ -29,6 +32,9 @@ export default {
     pageSelected() {
       this.$emit("pageWasChanged", this.pageSelected);
     }
+  },
+  components: {
+    ccCardProgress: CardProgress
   }
 };
 </script>
