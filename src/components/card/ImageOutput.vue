@@ -1,13 +1,19 @@
 <template>
-    <div class="row image-container" :style="styleObject">
-        <img id="outputImage">
-    </div>
+  <div class="row image-container" :style="styleObject" @mouseover="showOptions=true" @mouseleave="showOptions=false">
+    <button type="button" class="btn btn-danger btn-sm" v-show="showOptions">Remove Image</button>
+    <img id="outputImage">
+  </div>
 </template>
 
 <script>
 import Firebase from "firebase";
 
 export default {
+  data() {
+    return {
+      showOptions: false
+    };
+  },
   props: {
     displayImage: {
       type: String
@@ -42,5 +48,10 @@ export default {
   border: 1px dotted gray;
   overflow: hidden;
   margin: 5px 0;
+}
+
+button {
+  position: absolute;
+  z-index: 1;
 }
 </style>
