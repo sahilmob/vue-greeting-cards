@@ -14,6 +14,7 @@
 import ImageUpload from "./ImageUpload";
 import ImageOutput from "./ImageOutput";
 import SectionCompleted from "./SectionCompleted";
+import { clearImageMixin } from "../../clearImageMixin";
 
 export default {
   components: {
@@ -21,13 +22,7 @@ export default {
     ccImageOutput: ImageOutput,
     ccSectionCompleted: SectionCompleted
   },
-  methods: {
-    clearImage() {
-      if (this.imageName !== "") {
-        this.imageName = "placeholder.png";
-      }
-    }
-  },
+  mixins: [clearImageMixin],
   data() {
     return {
       imageName: ""

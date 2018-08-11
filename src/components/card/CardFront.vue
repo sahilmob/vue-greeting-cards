@@ -22,21 +22,16 @@ import TextOutput from "./TextOutput";
 import ImageUpload from "./ImageUpload";
 import ImageOutput from "./ImageOutput";
 import SectionCompleted from "./SectionCompleted";
+import { clearImageMixin } from "../../clearImageMixin";
 
 export default {
+  mixins: [clearImageMixin],
   components: {
     ccTextInput: TextInput,
     ccTextOutput: TextOutput,
     ccImageUpload: ImageUpload,
     ccImageOutput: ImageOutput,
     ccSectionCompleted: SectionCompleted
-  },
-  methods: {
-    clearImage() {
-      if (this.imageName !== "") {
-        this.imageName = "placeholder.png";
-      }
-    }
   },
   data() {
     return {
