@@ -7,7 +7,7 @@
                 <progress value="0" max="100" id="progressBar"></progress>
                 <br>
                 <img id="image">
-                <button type="button" id="setImageButton">Set Image</button>
+                <button type="button" id="setImageButton" style="display:none" @click="setImage">Set Image</button>
             </div>
         </div>
     </div>
@@ -34,8 +34,10 @@ export default {
       upload.on("state_changed", snapshot => {
         var progress = snapshot.bytesTransferred / snapshot.totalBytes * 100;
         document.getElementById("progressBar").value = progress;
+        if (progress == 100) {
+          this.$emit("displayImageChanged", this.file.name);
+        }
       });
-      this.$emit("displayImageChanged", this.file.name);
     }
   }
 };
