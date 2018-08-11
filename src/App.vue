@@ -58,4 +58,13 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #333;
 }
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
 </style>
