@@ -1,6 +1,8 @@
 <template>
     <footer>
-        <slot></slot>
+        <slot>
+            <p>No content added to the footer</p>
+        </slot>
     </footer>
 </template>
 
