@@ -7,8 +7,8 @@
           <component :is="currentPage"></component>
         </keep-alive>
         <Footer>
-          <p class="text-center">&copy; Creative Cards</p>
-          <nav>
+          <p class="text-center" slot="app-name">&copy; Creative Cards</p>
+          <nav slot="footer-menu">
             <ul class="nav justify-content-center">
               <li class="nav-item">
                 <a href="#" class="nav-link">Home</a>

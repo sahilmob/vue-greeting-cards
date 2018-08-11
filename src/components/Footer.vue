@@ -1,7 +1,10 @@
 <template>
     <footer>
-        <slot>
+        <slot name="app-name">
             <p>No content added to the footer</p>
+        </slot>
+        <slot name="footer-menu">
+
         </slot>
     </footer>
 </template>
