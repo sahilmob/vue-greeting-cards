@@ -46,7 +46,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .edit-area {
   background: #dffdff;
   padding: 20px;
