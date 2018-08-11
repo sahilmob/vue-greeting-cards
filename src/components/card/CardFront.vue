@@ -6,9 +6,9 @@
       <cc-text-input @displayTextChanged="textBox3 = $event"></cc-text-input>
     </div>
     <div class="col-sm-6 card card-display">
-      <cc-text-output></cc-text-output>
-      <cc-text-output></cc-text-output>
-      <cc-text-output></cc-text-output>
+      <cc-text-output :displayText="textBox1"></cc-text-output>
+      <cc-text-output :displayText="textBox2"></cc-text-output>
+      <cc-text-output :displayText="textBox3"></cc-text-output>
     </div>
   </div>
 </template>

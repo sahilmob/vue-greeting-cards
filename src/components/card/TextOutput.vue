@@ -1,11 +1,13 @@
 <template>
     <div>
-        <p>Sample text</p>
+        <p>{{displayText}}</p>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["displayText"]
+};
 </script>
 
 <style scoped>
