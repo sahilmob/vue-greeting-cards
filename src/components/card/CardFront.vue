@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-6 card edit-area">
       <cc-text-input @displayTextChanged="textBox1 = $event"></cc-text-input>
-      <cc-image-upload></cc-image-upload><hr>
+      <cc-image-upload @displayImageChanged="imageName = $event"></cc-image-upload><hr>
       <cc-text-input @displayTextChanged="textBox2 = $event"></cc-text-input>
       <cc-text-input @displayTextChanged="textBox3 = $event"></cc-text-input>
     </div>
@@ -29,7 +29,8 @@ export default {
     return {
       textBox1: "",
       textBox2: "",
-      textBox3: ""
+      textBox3: "",
+      imageName: ""
     };
   }
 };

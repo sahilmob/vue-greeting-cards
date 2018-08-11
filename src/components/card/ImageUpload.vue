@@ -35,6 +35,7 @@ export default {
         var progress = snapshot.bytesTransferred / snapshot.totalBytes * 100;
         document.getElementById("progressBar").value = progress;
       });
+      this.$emit("displayImageChanged", this.file.name);
     }
   }
 };
