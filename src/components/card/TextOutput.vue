@@ -8,6 +8,21 @@
         <option value="56">56px</option>
         <option value="64">64px</option>
       </select>
+      <div class="form-check form-check-inline">
+        <label for="form-check-label">
+          <input type="radio" class="form-check-input" value="left" v-model="setTextAlign"> Left
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label for="form-check-label">
+          <input type="radio" class="form-check-input" value="center" v-model="setTextAlign"> Center
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label for="form-check-label">
+          <input type="radio" class="form-check-input" value="right" v-model="setTextAlign"> Right
+        </label>
+      </div>
     </form>
     <p :style="styleObject">{{displayText}}</p>
   </div>
@@ -18,7 +33,8 @@ export default {
   data() {
     return {
       showOptions: false,
-      setFontSize: ""
+      setFontSize: "",
+      setTextAlign: ""
     };
   },
   props: {
@@ -32,7 +48,8 @@ export default {
     styleObject() {
       return {
         height: this.containerHeight + "px",
-        fontSize: this.setFontSize + "px"
+        fontSize: this.setFontSize + "px",
+        textAlign: this.setTextAlign
       };
     }
   }
