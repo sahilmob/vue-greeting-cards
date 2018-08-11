@@ -4,6 +4,7 @@
       <cc-text-input @displayTextChanged="textBox1 = $event"></cc-text-input>
       <cc-text-input @displayTextChanged="textBox2 = $event"></cc-text-input>
       <cc-text-input @displayTextChanged="textBox3 = $event"></cc-text-input>
+      <cc-section-completed></cc-section-completed>
     </div>
     <div class="col-sm-6 card card-display">
       <cc-text-output :displayText="textBox1" :containerHeight="130"></cc-text-output>
@@ -16,10 +17,13 @@
 <script>
 import TextInput from "./TextInput";
 import TextOutput from "./TextOutput";
+import SectionCompleted from "./SectionCompleted";
+
 export default {
   components: {
     ccTextInput: TextInput,
-    ccTextOutput: TextOutput
+    ccTextOutput: TextOutput,
+    ccSectionCompleted: SectionCompleted
   },
   data() {
     return {
