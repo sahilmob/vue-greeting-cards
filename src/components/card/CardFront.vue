@@ -8,6 +8,7 @@
     </div>
     <div class="col-sm-6 card card-display">
       <cc-text-output :displayText="textBox1" :containerHeight="130"></cc-text-output>
+      <cc-image-output :displayImage="imageName" :containerHeight="350"></cc-image-output>
       <cc-text-output :displayText="textBox2" :containerHeight="130"></cc-text-output>
       <cc-text-output :displayText="textBox3" :containerHeight="130"></cc-text-output>
     </div>
@@ -18,12 +19,14 @@
 import TextInput from "./TextInput";
 import TextOutput from "./TextOutput";
 import ImageUpload from "./ImageUpload";
+import ImageOutput from "./ImageOutput";
 
 export default {
   components: {
     ccTextInput: TextInput,
     ccTextOutput: TextOutput,
-    ccImageUpload: ImageUpload
+    ccImageUpload: ImageUpload,
+    ccImageOutput: ImageOutput
   },
   data() {
     return {
