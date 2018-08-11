@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import FirebaseConfig from "./firebaseConfig";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CardFront from "./components/card/CardFront";
