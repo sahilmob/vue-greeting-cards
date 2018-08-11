@@ -1,25 +1,48 @@
 <template>
-    <div class="row">
-        <div class="col-sm-6 card edit-area"></div>
-        <div class="col-sm-6 card card-display"></div>
+  <div class="row">
+    <div class="col-sm-6 card edit-area">
+      <cc-image-upload @displayImageChanged="imageName = $event"></cc-image-upload>
     </div>
+    <div class="col-sm-6 card card-display">
+      <cc-image-output :displayImage="imageName" :containerHeight="350" :clearImageProp="clearImage"></cc-image-output>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import ImageUpload from "./ImageUpload";
+import ImageOutput from "./ImageOutput";
+export default {
+  components: {
+    ccImageUpload: ImageUpload,
+    ccImageOutput: ImageOutput
+  },
+  methods: {
+    clearImage() {
+      if (this.imageName !== "") {
+        this.imageName = "placeholder.png";
+      }
+    }
+  },
+  data() {
+    return {
+      imageName: ""
+    };
+  }
+};
 </script>
 
 <style scoped>
 .edit-area {
   background: #dffdff;
   padding: 20px;
-  height: 800px;
+  height: 500px;
   border: none;
 }
 
 .card-display {
   padding: 20px;
-  height: 800px;
+  height: 500px;
   border: none;
 }
 </style>
