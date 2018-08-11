@@ -12,6 +12,9 @@
 <script>
 import Header from "./components/Header";
 import CardFront from "./components/card/CardFront";
+import CardInsideLeft from "./components/card/CardInsideLeft";
+import CardInsideRight from "./components/card/CardInsideRight";
+import CardBack from "./components/card/CardBack";
 
 export default {
   data() {
@@ -21,7 +24,10 @@ export default {
   },
   components: {
     Header,
-    CardFront
+    CardFront,
+    CardInsideLeft,
+    CardInsideRight,
+    CardBack
   }
 };
 </script>
