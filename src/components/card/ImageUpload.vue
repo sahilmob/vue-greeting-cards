@@ -4,6 +4,7 @@
             <h4>Upload image:</h4>
             <div class="form-group">
                 <input type="file" id="fileUpload" class="form-control-file" @change="uploadFile">
+                <progress value="0" max="100" id="progressBar"></progress>
                 <br>
                 <img id="image">
                 <button type="button" id="setImageButton">Set Image</button>
@@ -24,12 +25,16 @@ export default {
     uploadFile(event) {
       this.file = event.target.files[0];
       var storageRef = Firebase.storage().ref("user_uploads/" + this.file.name);
-      storageRef.put(this.file);
+      var upload = storageRef.put(this.file);
       var reader = new FileReader();
       reader.readAsDataURL(this.file);
       reader.onload = e => {
         document.getElementById("image").src = e.target.result;
       };
+      upload.on("state_changed", snapshot => {
+        var progress = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+        document.getElementById("progressBar").value = progress;
+      });
     }
   }
 };
