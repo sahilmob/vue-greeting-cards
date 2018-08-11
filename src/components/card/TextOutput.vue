@@ -23,8 +23,18 @@
           <input type="radio" class="form-check-input" value="right" v-model="setTextAlign"> Right
         </label>
       </div>
+      <div class="form-check form-check-inline">
+        <label for="" class="form-check-label">
+          <input type="checkbox" class="form-check-input" v-model="setBold"> Bold
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label for="" class="form-check-label">
+          <input type="checkbox" class="form-check-input" v-model="setItalic"> Italic
+        </label>
+      </div>
     </form>
-    <p :style="styleObject">{{displayText}}</p>
+    <p :style="styleObject" :class="{bold: setBold, italic: setItalic}">{{displayText}}</p>
   </div>
 </template>
 
@@ -34,7 +44,9 @@ export default {
     return {
       showOptions: false,
       setFontSize: "",
-      setTextAlign: ""
+      setTextAlign: "",
+      setBold: false,
+      setItalic: false
     };
   },
   props: {
@@ -57,6 +69,9 @@ export default {
 </script>
 
 <style scoped>
+template {
+  position: relative;
+}
 p {
   font-family: "Tangerine", cursive;
   font-size: 42px;
@@ -67,5 +82,24 @@ p {
   border: 1px dotted gray;
   white-space: pre-line;
   overflow: hidden;
+}
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+form {
+  position: absolute;
+  border-bottom: 1px dotted gray;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+select {
+  height: 40%;
 }
 </style>
