@@ -1,6 +1,6 @@
 <template>
   <div class="row image-container" :style="styleObject" @mouseover="showOptions=true" @mouseleave="showOptions=false">
-    <transition name="fade">
+    <transition name="scale">
       <button type="button" class="btn btn-danger btn-sm" v-show="showOptions" @click="clearImageProp">Remove Image</button>
     </transition>
     <img id="outputImage">
@@ -66,5 +66,31 @@ button {
 img {
   width: 150%;
   height: 150%;
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.scale-enter-active {
+  animation: scale-in 0.5s;
+}
+
+.scale-leave-active {
+  animation: scale-out 0.5s;
+}
+
+@keyframes scale-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
 }
 </style>
