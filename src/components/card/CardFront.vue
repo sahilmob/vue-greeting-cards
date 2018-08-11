@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-sm-6 card edit-area">
       <cc-text-input @displayTextChanged="textBox1 = $event"></cc-text-input>
+      <cc-image-upload></cc-image-upload><hr>
       <cc-text-input @displayTextChanged="textBox2 = $event"></cc-text-input>
       <cc-text-input @displayTextChanged="textBox3 = $event"></cc-text-input>
     </div>
@@ -16,11 +17,13 @@
 <script>
 import TextInput from "./TextInput";
 import TextOutput from "./TextOutput";
+import ImageUpload from "./ImageUpload";
 
 export default {
   components: {
     ccTextInput: TextInput,
-    ccTextOutput: TextOutput
+    ccTextOutput: TextOutput,
+    ccImageUpload: ImageUpload
   },
   data() {
     return {
