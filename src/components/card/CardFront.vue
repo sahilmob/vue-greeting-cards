@@ -1,12 +1,20 @@
 <template>
-    <div class="row">
-        <div class="col-sm-6 card edit-area"></div>
-        <div class="col-sm-6 card card-display"></div>
+  <div class="row">
+    <div class="col-sm-6 card edit-area">
+      <cc-text-input></cc-text-input>
     </div>
+    <div class="col-sm-6 card card-display"></div>
+  </div>
 </template>
 
 <script>
-export default {};
+import TextInput from "./TextInput";
+
+export default {
+  components: {
+    ccTextInput: TextInput
+  }
+};
 </script>
 
 <style scoped>
